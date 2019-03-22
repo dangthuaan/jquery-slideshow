@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jquery Slideshow</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <div class="slides">
+            <div class="img-box active">
+                <img src="images/img1.jpeg">
+            </div>
+            <div class="img-box">
+                <img src="images/img2.jpg">
+            </div>
+            <div class="img-box">
+                <img src="images/img3.jpg">
+            </div>
+            <div class="img-box">
+                <img src="images/img4.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <a id="prev"><img src="images/prev.png"></a>
+        <button class="run" id="auto">AUTO</button> 
+        <a id="next">
+            <img src="images/next.png"></a>
+    </div>
+
+    <script src="animation.js"></script>
+</body>
+
+</html>

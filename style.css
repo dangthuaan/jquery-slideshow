@@ -1,0 +1,44 @@
+.slideshow-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 15px auto;
+}
+
+.img-box {
+  width:100%;
+  height:auto;
+  position:absolute;
+}
+
+.img-box img{
+  width: 300px;
+  height: 200px;
+}
+
+.controls {
+  position: relative;
+  text-align: center;
+}
+
+
+#prev img, #next img{
+  width: 20px;
+}
+
+#prev:hover, #next:hover {
+  cursor: pointer;
+}
+
+#auto {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 95px;
+}
