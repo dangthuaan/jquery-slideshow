@@ -3,6 +3,8 @@ $(document).ready(function() {
         items = $('.img-box'),
         count = items.length;
 
+    $('#img-counter').html(counter + '/4');
+
     $('.img-box').hide();
     $('.img-box.active').show();
 
@@ -14,6 +16,8 @@ $(document).ready(function() {
 
         $('.img-box.active').fadeOut().removeClass('active');
         $('.img-box:nth-child(' + counter + ')').addClass('active').fadeIn();
+        
+        $('#img-counter').html(counter + '/4');
     }
 
     $('#next').click(function() {
@@ -28,6 +32,8 @@ $(document).ready(function() {
 
         $('.img-box.active').fadeOut().removeClass('active');
         $('.img-box:nth-child(' + counter + ')').addClass('active').fadeIn();
+
+        $('#img-counter').html(counter + '/4');
     });
 
     
@@ -35,7 +41,7 @@ $(document).ready(function() {
 
     $('#auto').click(function() {
         if ($(this).hasClass('run')) {
-            a = setInterval(run, 1000);
+            a = setInterval(run, 5000);
             $(this).removeClass('run');
         } else {
             clearInterval(a);
