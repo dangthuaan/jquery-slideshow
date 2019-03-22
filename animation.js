@@ -3,7 +3,7 @@ $(document).ready(function() {
         items = $('.img-box'),
         count = items.length;
 
-    $('#img-counter').html(counter + '/4');
+    $('#img-counter').html(counter + '/' + items.length);
 
     $('.img-box').hide();
     $('.img-box.active').show();
@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('.img-box.active').fadeOut().removeClass('active');
         $('.img-box:nth-child(' + counter + ')').addClass('active').fadeIn();
         
-        $('#img-counter').html(counter + '/4');
+        $('#img-counter').html(counter + '/' + items.length);
     }
 
     $('#next').click(function() {
@@ -33,7 +33,7 @@ $(document).ready(function() {
         $('.img-box.active').fadeOut().removeClass('active');
         $('.img-box:nth-child(' + counter + ')').addClass('active').fadeIn();
 
-        $('#img-counter').html(counter + '/4');
+        $('#img-counter').html(counter + '/' + items.length);
     });
 
     
