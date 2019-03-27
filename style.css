@@ -1,4 +1,4 @@
-.slideshow-container {
+.carousel {
   position: relative;
   width: 300px;
   height: 200px;
@@ -11,7 +11,7 @@
   position:absolute;
 }
 
-.img-box img{
+.img-box img {
   width: 300px;
   height: 200px;
 }
@@ -19,18 +19,19 @@
 .controls {
   position: relative;
   text-align: center;
+  padding-top: 220px;
 }
 
 
-#prev img, #next img{
+.prev img, .next img{
   width: 20px;
 }
 
-#prev:hover, #next:hover {
+.prev:hover, .next:hover {
   cursor: pointer;
 }
 
-#auto {
+button {
   background-color: #f44336;
   border: none;
   color: white;
@@ -40,11 +41,20 @@
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  margin: 0 95px;
+  margin: 0 85px;
 }
 
-#img-counter {
+.img-counter {
   font-weight: bold;
   text-align: center;
-  margin-top: 5px;
+  margin: 15px auto;
+}
+
+h4 {
+  text-align: center;
+  font-family: tahoma;
+}
+
+hr {
+  margin-top: 100px;
 }

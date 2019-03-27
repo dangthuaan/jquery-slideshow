@@ -1,53 +1,59 @@
 $(document).ready(function() {
-    let counter = 1,
-        items = $('.img-box'),
-        count = items.length;
+    $('.carousel').each(function() {
+        let $this = $(this);
 
-    $('#img-counter').html(counter + '/' + items.length);
+        let counter = 1,
+            items = $this.find('.img-box'),
+            count = items.length,
+            $next = $this.find('.next'),
+            $prev = $this.find('.prev'),
+            $autoPlay = $this.find('button');
 
-    $('.img-box').hide();
-    $('.img-box.active').show();
 
-    function run() {
-        counter++;
-        if (counter > count) {
-            counter = 1;
+        $this.find('.img-box').hide();
+        $this.find('.img-box.active').show();
+        $this.find('.img-counter').html(counter + '/' + count);
+
+        function run() {
+            $this.find('.img-box.active').fadeOut().removeClass('active');
+            $this.find('.img-box:nth-child(' + counter + ')').addClass('active').fadeIn();
+            $this.find('.img-counter').html(counter + '/' + count);
         }
 
-        $('.img-box.active').fadeOut().removeClass('active');
-        $('.img-box:nth-child(' + counter + ')').addClass('active').fadeIn();
+
+        $next.on('click', function() {
+            counter++;
+            if (counter > count) {
+                counter = 1;
+            }
+            run();
+        });
+
+
+        $prev.on('click', function() {
+            counter--;
+            if (counter == 0) {
+                counter = count;
+            }
+            run();
+        });
+
+        let a;
+        $autoPlay.on('click', function() {
+            if ($autoPlay.hasClass('auto')) {
+                a = setInterval(function() {
+                    counter++;
+                    if (counter > count) {
+                        counter = 1;
+                    }
+                    run();
+                }, 5000);
+                $autoPlay.removeClass('auto');
+            } else {
+                clearInterval(a);
+                $autoPlay.addClass('auto');
+            }
+        });
         
-        $('#img-counter').html(counter + '/' + items.length);
-    }
-
-    $('#next').click(function() {
-        run();
     });
-
-    $('#prev').click(function() {
-        counter--;
-        if (counter == 0) {
-            counter = count;
-        }
-
-        $('.img-box.active').fadeOut().removeClass('active');
-        $('.img-box:nth-child(' + counter + ')').addClass('active').fadeIn();
-
-        $('#img-counter').html(counter + '/' + items.length);
-    });
-
-    
-    let a;
-
-    $('#auto').click(function() {
-        if ($(this).hasClass('run')) {
-            a = setInterval(run, 5000);
-            $(this).removeClass('run');
-        } else {
-            clearInterval(a);
-            $(this).addClass('run');
-        }
-    });
-    // push AUTO button again to stop the action
-
 });

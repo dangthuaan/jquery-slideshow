@@ -5,11 +5,11 @@
     <title>Jquery Slideshow</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
-    <div class="slideshow-container">
+    <h4> SLIDESHOW 1 </h4>
+    <div class="carousel">
         <div class="slides">
             <div class="img-box active">
                 <img src="images/img1.jpeg">
@@ -24,16 +24,40 @@
                 <img src="images/img4.jpg">
             </div>
         </div>
+        <div class="controls">
+            <a class="prev"><img src="images/prev.png"></a>
+            <button class="auto">AUTO</button>
+            <a class="next"><img src="images/next.png"></a>
+        </div>
+        <div class="img-counter"></div>
     </div>
+    
+    <hr>
 
-    <div class="controls">
-        <a id="prev"><img src="images/prev.png"></a>
-        <button class="run" id="auto">AUTO</button> 
-        <a id="next">
-            <img src="images/next.png"></a>
+    <h4> SLIDESHOW 2 </h4>
+    <div class="carousel">
+        <div class="slides">
+            <div class="img-box active">
+                <img src="images/img1.jpeg">
+            </div>
+            <div class="img-box">
+                <img src="images/img2.jpg">
+            </div>
+            <div class="img-box">
+                <img src="images/img3.jpg">
+            </div>
+            <div class="img-box">
+                <img src="images/img4.jpg">
+            </div>
+        </div>
+        <div class="controls">
+            <a class="prev"><img src="images/prev.png"></a>
+            <button class="auto">AUTO</button>
+            <a class="next"><img src="images/next.png"></a>
+        </div>
+        <div class="img-counter"></div>
     </div>
-    <div id="img-counter"></div>
-
+    <script src="jquery-3.3.1.min.js"></script>
     <script src="animation.js"></script>
 </body>
 
